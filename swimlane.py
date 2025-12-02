@@ -47,8 +47,7 @@ ax.set_yticklabels(lanes)
 
 # Labels and title
 ax.set_xlabel('Time')
-ax.set_ylabel('Lanes')
-ax.set_title('Swimlane Diagram (start/end inputs, multi-line labels)')
+ax.set_title('Project Staffing Model')
 
 # Grid and limits
 min_time = min(t[1] for t in tasks)
