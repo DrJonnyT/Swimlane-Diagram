@@ -24,7 +24,7 @@ tasks = [
 ]
 
 # --- PLOT ------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(11, 6))
+fig, ax = plt.subplots(figsize=(15, 6))
 
 bar_height = 0.8  # height of each lane bar
 lane_offset = 0.4  # half-height for positioning
