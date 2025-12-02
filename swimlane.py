@@ -1,6 +1,5 @@
 
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 
 # Define lanes and tasks with start and end times
 lanes = ["RSE Baseline Support", "Project 1", "Project 2", "Project 3"]
