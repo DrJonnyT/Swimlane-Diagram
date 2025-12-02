@@ -54,7 +54,7 @@ ax.set_title('Swimlane Diagram (start/end inputs, multi-line labels)')
 min_time = min(t[1] for t in tasks)
 max_time = max(t[2] for t in tasks)
 span = max_time - min_time
-ax.set_xlim(min_time - 0.5*span*0.05, max_time +
+ax.set_xlim(0 - 0.5*span*0.05, max_time +
             0.5*span*0.05)  # small padding
 ax.set_ylim(-0.5, len(lanes) - 0.5)
 ax.grid(axis='x', linestyle='--', alpha=0.3)
