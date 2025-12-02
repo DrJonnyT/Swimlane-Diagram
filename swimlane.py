@@ -24,10 +24,17 @@ tasks = [
 # Create figure and axis
 fig, ax = plt.subplots(figsize=(10, 6))
 
-# Plot each task as a horizontal bar
+# Plot each task as a horizontal bar and add label on the bar
 for lane_idx, start, duration, color, label in tasks:
+    # Draw the bar
     ax.broken_barh([(start, duration)], (lane_idx - 0.4, 0.8),
                    facecolors=color, edgecolor='black')
+
+    # Add text label centered on the bar
+    text_x = start + duration / 2
+    text_y = lane_idx
+    ax.text(text_x, text_y, label, ha='center', va='center',
+            fontsize=9, color='black', weight='bold')
 
 # Set y-ticks and labels
 ax.set_yticks(range(len(lanes)))
@@ -36,15 +43,7 @@ ax.set_yticklabels(lanes)
 # Set axis labels and title
 ax.set_xlabel('Time')
 ax.set_ylabel('Lanes')
-ax.set_title('Swimlane Diagram')
-
-# Create legend dynamically from tasks
-legend_patches = []
-for _, _, _, color, label in tasks:
-    if label not in [p.get_label() for p in legend_patches]:
-        legend_patches.append(mpatches.Patch(color=color, label=label))
-
-ax.legend(handles=legend_patches, loc='upper right')
+ax.set_title('Swimlane Diagram with Labels on Bars')
 
 # Set limits for better visualization
 ax.set_xlim(0, 10)
