@@ -1,55 +1,64 @@
 
 import matplotlib.pyplot as plt
 
-# Define lanes and tasks with start and end times
+# --- CONFIGURABLE DATA -----------------------------------------------------
+# Lanes (rows)
 lanes = ["RSE Baseline Support", "Project 1", "Project 2", "Project 3"]
 
-# Example tasks: (lane index, start, duration, color, label)
+# Tasks defined as: (lane_index, start, end, color, label)
+# Replace the sample values with your own start/end (numbers or datetime converted to numbers)
 tasks = [
     # RSE Baseline Support broken into segments
-    (0, 1, 2, 'skyblue', 'RSE Segment 1'),
-    (0, 4, 1.5, 'lightgreen', 'RSE Segment 2'),
-    (0, 6, 2, 'orange', 'RSE Segment 3'),
+    (0, 1.0, 3.0, 'skyblue',    'RSE Segment 1\nInitial Setup'),
+    (0, 4.0, 5.5, 'lightgreen', 'RSE Segment 2\nFollow-up'),
+    (0, 6.0, 8.0, 'orange',     'RSE Segment 3\nFinalization'),
 
-    # Project 1 tasks
-    (1, 2, 3, 'purple', 'Project 1 Task'),
+    # Project 1
+    (1, 2.0, 5.0, 'purple',     'Project 1\nMain Task'),
 
-    # Project 2 tasks
-    (2, 1, 4, 'pink', 'Project 2 Task'),
+    # Project 2
+    (2, 1.0, 5.0, 'pink',       'Project 2\nAnalysis Phase'),
 
-    # Project 3 tasks
-    (3, 5, 2, 'yellow', 'Project 3 Task')
+    # Project 3
+    (3, 5.0, 7.0, 'yellow',     'Project 3\nImplementation'),
 ]
 
-# Create figure and axis
-fig, ax = plt.subplots(figsize=(10, 6))
+# --- PLOT ------------------------------------------------------------------
+fig, ax = plt.subplots(figsize=(11, 6))
 
-# Plot each task as a horizontal bar and add label on the bar
-for lane_idx, start, duration, color, label in tasks:
-    # Draw the bar
-    ax.broken_barh([(start, duration)], (lane_idx - 0.4, 0.8),
+bar_height = 0.8  # height of each lane bar
+lane_offset = 0.4  # half-height for positioning
+
+for lane_idx, start, end, color, label in tasks:
+    duration = end - start
+    # Draw the bar using start and duration
+    ax.broken_barh([(start, duration)], (lane_idx - lane_offset, bar_height),
                    facecolors=color, edgecolor='black')
 
-    # Add text label centered on the bar
+    # Center the text inside the bar
     text_x = start + duration / 2
     text_y = lane_idx
-    ax.text(text_x, text_y, label, ha='center', va='center',
-            fontsize=9, color='black', weight='bold')
+    ax.text(text_x, text_y, label, ha='center', va='center', fontsize=9,
+            color='black', weight='bold', wrap=True)
 
-# Set y-ticks and labels
+# Y axis: lanes
 ax.set_yticks(range(len(lanes)))
 ax.set_yticklabels(lanes)
 
-# Set axis labels and title
+# Labels and title
 ax.set_xlabel('Time')
 ax.set_ylabel('Lanes')
-ax.set_title('Swimlane Diagram with Labels on Bars')
+ax.set_title('Swimlane Diagram (start/end inputs, multi-line labels)')
 
-# Set limits for better visualization
-ax.set_xlim(0, 10)
+# Grid and limits
+min_time = min(t[1] for t in tasks)
+max_time = max(t[2] for t in tasks)
+span = max_time - min_time
+ax.set_xlim(min_time - 0.5*span*0.05, max_time +
+            0.5*span*0.05)  # small padding
 ax.set_ylim(-0.5, len(lanes) - 0.5)
+ax.grid(axis='x', linestyle='--', alpha=0.3)
 
-# Save outputs
 fig.tight_layout()
-fig.savefig('swimlane_diagram.png')
-print("Swimlane diagram saved as swimlane_diagram.png")
+fig.savefig('swimlane_start_end.png', dpi=150)
+print('Swimlane diagram saved as swimlane_start_end.png')
