@@ -11,15 +11,16 @@ tasks = [
     # RSE Baseline Support broken into segments
     (0, 0.0, 1.0, 'lightgreen',    'Self-directed\ntraining'),
     (0, 1.0, 2.0, 'skyblue',    'Project 1\nsupport'),
-    (0, 2.0, 3.0, 'lightgreen', 'Tooling\ndevelopment'),
-    (0, 3.0, 4.0, 'yellow', 'Project 3\nsupport'),
-    (0, 4.0, 6.0, 'lightgreen', 'Tooling development'),
+    (0, 2.0, 4.0, 'lightgreen', 'Tooling\ndevelopment'),
+    (0, 4.0, 5.0, 'yellow', 'Project 3\nsupport'),
+    (0, 5.0, 6.0, 'lightgreen', 'Tooling\ndevelopment'),
     (0, 6.0, 7.0, 'skyblue',     'Project 1\nsupport'),
     (0, 7.0, 8.0, 'skyblue',     'Project 1\ndeployment'),
-    (0, 8.0, 9.0, 'yellow',     'Project 3\nsupport'),
-    (0, 9.0, 10.0, 'yellow',     'Project 3\ndeployment'),
-    (0, 10.0, 11.0, 'skyblue',     'Project 1\nmaintenence'),
-    (0, 11.0, 12.0, 'yellow',     'Project 3\nmaintenence'),
+    (0, 8.0, 9.0, 'pink',     'Project 2\nmaintenence'),
+    (0, 9.0, 10.0, 'yellow',     'Project 3\nsupport'),
+    (0, 10.0, 11.0, 'yellow',     'Project 3\ndeployment'),
+    (0, 11.0, 12.0, 'skyblue',     'Project 1\nmaintenence'),
+    (0, 12.0, 13.0, 'yellow',     'Project 3\nmaintenence'),
 
 
     # Project 1
@@ -27,14 +28,13 @@ tasks = [
 
     # Project 2
     (2, 2.0, 8.0, 'pink',       'Project 2 development\nRSE'),
-    (2, 8.0, 9.0, 'pink',       'Project 2\ndeployment'),
 
     # Project 3
-    (3, 3.0, 9.0, 'yellow',     'Project 3\nPDRA'),
+    (3, 4.0, 10.0, 'yellow',     'Project 3\nPDRA'),
 ]
 
 # --- PLOT ------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(15, 6))
+fig, ax = plt.subplots(figsize=(14, 7))
 
 bar_height = 0.8  # height of each lane bar
 lane_offset = 0.4  # half-height for positioning
