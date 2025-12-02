@@ -3,24 +3,34 @@ import matplotlib.pyplot as plt
 
 # --- CONFIGURABLE DATA -----------------------------------------------------
 # Lanes (rows)
-lanes = ["RSE Baseline Support", "Project 1", "Project 2", "Project 3"]
+lanes = ["RSE\nBaseline\nSupport", "Project 1", "Project 2", "Project 3"]
 
 # Tasks defined as: (lane_index, start, end, color, label)
 # Replace the sample values with your own start/end (numbers or datetime converted to numbers)
 tasks = [
     # RSE Baseline Support broken into segments
-    (0, 1.0, 3.0, 'skyblue',    'RSE Segment 1\nInitial Setup'),
-    (0, 4.0, 5.5, 'lightgreen', 'RSE Segment 2\nFollow-up'),
-    (0, 6.0, 8.0, 'orange',     'RSE Segment 3\nFinalization'),
+    (0, 0.0, 1.0, 'lightgreen',    'Self-directed\ntraining'),
+    (0, 1.0, 2.0, 'skyblue',    'Project 1\nsupport'),
+    (0, 2.0, 3.0, 'lightgreen', 'Tooling\ndevelopment'),
+    (0, 3.0, 4.0, 'yellow', 'Project 3\nsupport'),
+    (0, 4.0, 6.0, 'lightgreen', 'Tooling development'),
+    (0, 6.0, 7.0, 'skyblue',     'Project 1\nsupport'),
+    (0, 7.0, 8.0, 'skyblue',     'Project 1\ndeployment'),
+    (0, 8.0, 9.0, 'yellow',     'Project 3\nsupport'),
+    (0, 9.0, 10.0, 'yellow',     'Project 3\ndeployment'),
+    (0, 10.0, 11.0, 'skyblue',     'Project 1\nmaintenence'),
+    (0, 11.0, 12.0, 'yellow',     'Project 3\nmaintenence'),
+
 
     # Project 1
-    (1, 2.0, 5.0, 'purple',     'Project 1\nMain Task'),
+    (1, 1.0, 7.0, 'skyblue',     'Project 1\nPDRA'),
 
     # Project 2
-    (2, 1.0, 5.0, 'pink',       'Project 2\nAnalysis Phase'),
+    (2, 2.0, 8.0, 'pink',       'Project 2 development\nRSE'),
+    (2, 8.0, 9.0, 'pink',       'Project 2\ndeployment'),
 
     # Project 3
-    (3, 5.0, 7.0, 'yellow',     'Project 3\nImplementation'),
+    (3, 3.0, 9.0, 'yellow',     'Project 3\nPDRA'),
 ]
 
 # --- PLOT ------------------------------------------------------------------
