@@ -57,6 +57,7 @@ ax.set_yticklabels(lanes)
 
 # Labels and title
 ax.set_xlabel('Time')
+ax.set_xticklabels([''] * len(ax.get_xticks()))  # No numbers on x axis
 ax.set_title('Project Staffing Model')
 
 # Grid and limits
