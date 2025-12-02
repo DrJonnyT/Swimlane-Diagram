@@ -60,5 +60,5 @@ ax.set_ylim(-0.5, len(lanes) - 0.5)
 ax.grid(axis='x', linestyle='--', alpha=0.3)
 
 fig.tight_layout()
-fig.savefig('swimlane_start_end.png', dpi=150)
-print('Swimlane diagram saved as swimlane_start_end.png')
+fig.savefig('swimlane.png', dpi=150)
+print('Swimlane diagram saved as swimlane.png')
