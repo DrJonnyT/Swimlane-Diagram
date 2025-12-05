@@ -8,19 +8,18 @@ lanes = ["RSE\nBaseline\nSupport", "Project 1", "Project 2", "Project 3"]
 # NOTE: You can now include overlapping tasks for lane 0 (baseline)
 tasks = [
     # --- Baseline (lane 0) — you MAY overlap these times ---
-    (0, 0.0, 1.5, 'lightgreen', 'Self-directed\ntraining'),
+    (0, 0.0, 2.5, 'lightgreen', 'Self-directed\ntraining'),
     (0, 1.0, 2.0, 'skyblue',    'Project 1\nsupport'),      # overlaps with training
-    (0, 2.0, 7.0, 'lightgreen', 'Tooling\ndevelopment'),
-    (0, 4.0, 5.0, 'yellow',     'Project 3\nsupport'),
-    # overlaps with tooling
-    (0, 9.0, 10.0, 'skyblue',     'Project 1\nmaintenance'),
-    (0, 6.5, 7.3, 'skyblue',       'Project 1\nsupport'),  # overlaps with tooling
+    (0, 2.5, 7.0, 'lightgreen', 'Tooling\ndevelopment'),
+    (0, 4.0, 5.0, 'yellow',     'Project 3\nsupport'),      # overlaps with tooling
+    (0, 10.0, 11.0, 'skyblue',   'Project 1\nmaint    \n   enance'),
+    (0, 6.0, 7.0, 'skyblue',    'Project 1\nsupport'),      # overlaps with tooling
     (0, 7.0, 8.5, 'skyblue',    'Project 1\ndeployment'),
     (0, 8.5, 9.5, 'pink',       'Project 2\ndeployment'),
-    (0, 9.5, 10.5, 'yellow',    'Project 3\nsupport'),
+    (0, 9.0, 10.0, 'yellow',    'Project 3\nsupport'),
     (0, 10.5, 12.0, 'yellow',   'Project 3\ndeployment'),
-    (0, 11.5, 12.5, 'pink',  'Project 2\nmaintenance'),
-    (0, 12.5, 13.5, 'yellow',   'Project 3\nmaintenance'),
+    (0, 11.5, 12.5, 'pink',     'Project 2\nmaint    \n   enance'),
+    (0, 12.5, 13.5, 'yellow',   'Project 3\nmaint    \n   enance'),
 
     # --- Other lanes (unchanged) ---
     (1, 1.0, 7.0, 'skyblue',    'Project 1\nPDRA'),
