@@ -140,4 +140,4 @@ ax.grid(axis='x', linestyle='--', alpha=0.3)
 
 fig.tight_layout()
 fig.savefig('swimlane.png', dpi=150)
-print('Swimlane diagram saved as swimlane.png')
+print('Swimlane.png')
